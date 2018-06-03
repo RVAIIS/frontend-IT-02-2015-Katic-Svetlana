@@ -33,12 +33,12 @@
 
     <ng-container matColumnDef="nacionalnost">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Nacionalnost</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.nacionalnost.id}}</mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.nacionalnost.naziv}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="tim">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Tim</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.tim.id}}</mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.tim.naziv}}</mat-cell>
     </ng-container>
     <!-- actions -->
     <ng-container matColumnDef="actions">

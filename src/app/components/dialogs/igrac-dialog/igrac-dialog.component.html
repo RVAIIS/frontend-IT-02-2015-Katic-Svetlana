@@ -35,7 +35,9 @@
 
     <div class="form">
       <mat-form-field>
-        <input matInput placeholder="Datum rođenja" [(ngModel)]="data.datum_rodjenja" name="datum_rodjenja" [disabled]="flag == 3">
+        <input matInput [matDatepicker]="datum_rodjenja" placeholder="Datum rođenja" [(ngModel)]="data.datum_rodjenja" name="datum_rodjenja" [disabled]="flag == 3">
+        <mat-datepicker-toggle matSuffix [for]="datum_rodjenja"></mat-datepicker-toggle>
+        <mat-datepicker #datum_rodjenja></mat-datepicker>
       </mat-form-field>
     </div>
  

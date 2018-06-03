@@ -3,7 +3,6 @@ import { IgracService } from '../../services/igrac.service';
 import { MatDialog, MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import { Igrac } from '../../models/igrac';
 import { Observable } from 'rxjs/Observable';
-//import { Dobavljac } from '../../models/dobavljac';
 import { Nacionalnost } from '../../models/nacionalnost';
 import { Tim } from '../../models/tim';
 import { IgracDialogComponent } from '../dialogs/igrac-dialog/igrac-dialog.component';
@@ -71,7 +70,7 @@ export class IgracComponent implements OnInit {
     datum_rodjenja: Date, nacionalnost: Nacionalnost, tim: Tim) {
     const dialogRef = this.dialog.open(IgracDialogComponent, {
       data: {
-        i: id, id: id, ime: ime, prezime: prezime, broj_reg: broj_reg,
+        i: id,id: id, ime: ime, prezime: prezime, broj_reg: broj_reg,
         datum_rodjenja: datum_rodjenja, nacionalnost: nacionalnost, tim: tim
       }
     });

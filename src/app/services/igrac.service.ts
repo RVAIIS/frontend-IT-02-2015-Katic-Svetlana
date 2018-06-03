@@ -8,8 +8,8 @@ import {Observable} from 'rxjs/Observable';
 export class IgracService {
     igracService: IgracService;
 
-    private readonly API_URL = 'http://localhost:8083/igrac';
-    private readonly API_URL_BYID = 'http://localhost:8083/igracZaTimId';
+    private readonly API_URL = 'http://localhost:8083/igrac/';
+    private readonly API_URL_BYID = 'http://localhost:8083/igracZaTim/';
 
     dataChange: BehaviorSubject<Igrac[]>=new BehaviorSubject<Igrac[]>([]);
     constructor(private httpClient: HttpClient) { }
