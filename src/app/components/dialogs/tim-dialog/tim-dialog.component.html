@@ -1,0 +1,46 @@
+<div class="container">
+  <h3 mat-dialog-title *ngIf="flag == 1">Dodavanje tima</h3>
+  <h3 mat-dialog-title *ngIf="flag == 2">Modifikacija tima: {{data.id}}</h3>
+  <h3 mat-dialog-title *ngIf="flag == 3">Brisanje tima: {{data.id}}</h3>
+ 
+  <form class="mat-dialog-content" #formControl="ngForm">
+
+      <div class="form">
+          <mat-form-field>
+            <input matInput placeholder="Naziv" [(ngModel)]="data.naziv" name="naziv" [disabled]="flag==3" required>
+          </mat-form-field>
+      </div>
+
+      <div class="form">
+          <mat-form-field>
+            <input matInput [matDatepicker]="osnovan" placeholder="Datum osnivanja" [(ngModel)]="data.osnovan" name="osnovan" [disabled]="flag == 3">
+            <mat-datepicker-toggle matSuffix [for]="osnovan"></mat-datepicker-toggle>
+            <mat-datepicker #osnovan></mat-datepicker>
+          </mat-form-field>
+      </div>
+
+      <div class="form">
+        <mat-form-field>
+          <input matInput placeholder="Sediste" [(ngModel)]="data.sediste" name="sediste" [disabled]="flag==3" required>
+        </mat-form-field>
+      </div>
+
+    <div class="form">
+      <mat-form-field>
+        <mat-select [(ngModel)]="data.liga" placeholder="Liga" name="liga" [compareWith]="compareTo" [disabled]="flag == 3">
+          <mat-option *ngFor="let liga of lige" [value]="liga">
+            {{ liga.naziv }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+ 
+    <div mat-dialog-actions>
+      <button mat-button *ngIf="flag == 1" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="add()">Sacuvaj</button>
+      <button mat-button *ngIf="flag == 2" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="update()">Sacuvaj</button>
+      <button mat-button *ngIf="flag == 3" [type]="submit" [mat-dialog-close]="1" (click)="delete()">Obriši</button>
+      <button mat-button (click)="cancel()" tabindex="-1">Poništi</button>
+    </div>
+
+  </form>
+ </div>
