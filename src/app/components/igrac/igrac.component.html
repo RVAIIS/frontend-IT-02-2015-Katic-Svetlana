@@ -6,6 +6,7 @@
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Pretraga">
   </mat-form-field>
   <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+    
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef  mat-sort-header>Id</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
@@ -21,14 +22,14 @@
       <mat-cell *matCellDef="let row"> {{row.prezime}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="broj_reg">
+    <ng-container matColumnDef="brojReg">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Broj registracije</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.broj_reg}}</mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.brojReg}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="datum_rodjenja">
+    <ng-container matColumnDef="datumRodjenja">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Datum rođenja</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.datum_rodjenja | date : "dd.MM.yyyy."}}</mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.datumRodjenja | date : "dd.MM.yyyy."}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="nacionalnost">
@@ -50,12 +51,12 @@
 
       <mat-cell *matCellDef="let row; let i=index;">
         <button mat-icon-button color="primary" (click)="openDialog(2, row.id, row.ime,
-         row.prezime, row.broj_reg, row.datum_rodjenja, row.nacionalnost, row.tim)">
+         row.prezime, row.brojReg, row.datumRodjenja, row.nacionalnost, row.tim)">
           <mat-icon aria-label="Edit">edit</mat-icon>
         </button>
 
         <button mat-icon-button color="primary" (click)="openDialog(3, row.id, row.ime,
-        row.prezime, row.broj_reg, row.datum_rodjenja, row.nacionalnost, row.tim)">
+        row.prezime, row.brojReg, row.datumRodjenja, row.nacionalnost, row.tim)">
           <mat-icon aria-label="Delete">delete</mat-icon>
         </button>
       </mat-cell>

@@ -30,6 +30,11 @@ export class IgracDialogComponent implements OnInit {
       );
   }
 
+   
+  compareTo(a, b) {
+    return a.id == b.id;
+  }
+
   public add(): void {
     this.data.id = -1;
     this.igracService.addIgrac(this.data);
@@ -50,9 +55,6 @@ export class IgracDialogComponent implements OnInit {
     this.dialogRef.close();
     this.snackBar.open("Odustali ste", "U redu", { duration: 1000 });
   }
- 
-  compareTo(a, b) {
-    return a.id == b.id;
-  }
+
 
 }

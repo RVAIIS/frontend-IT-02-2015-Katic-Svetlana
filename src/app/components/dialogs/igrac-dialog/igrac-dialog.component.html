@@ -26,18 +26,18 @@
         <input matInput placeholder="Prezime" [(ngModel)]="data.prezime" name="prezime" [disabled]="flag == 3">
       </mat-form-field>
     </div>
- 
+
     <div class="form">
-      <mat-form-field>
-        <input matInput placeholder="Broj registracije" [(ngModel)]="data.broj_reg" name="broj_reg" [disabled]="flag == 3">
-      </mat-form-field>
-    </div>
+        <mat-form-field class="example-full-width">
+          <input type="tel" matInput placeholder="Broj registracije" [(ngModel)]="data.brojReg" name="brojReg" [disabled]="flag == 3">
+        </mat-form-field>
+      </div>
 
     <div class="form">
       <mat-form-field>
-        <input matInput [matDatepicker]="datum_rodjenja" placeholder="Datum rođenja" [(ngModel)]="data.datum_rodjenja" name="datum_rodjenja" [disabled]="flag == 3">
-        <mat-datepicker-toggle matSuffix [for]="datum_rodjenja"></mat-datepicker-toggle>
-        <mat-datepicker #datum_rodjenja></mat-datepicker>
+        <input matInput [matDatepicker]="datumRodjenja" placeholder="Datum rođenja" [(ngModel)]="data.datumRodjenja" name="datumRodjenja" [disabled]="flag == 3">
+        <mat-datepicker-toggle matSuffix [for]="datumRodjenja"></mat-datepicker-toggle>
+        <mat-datepicker #datumRodjenja></mat-datepicker>
       </mat-form-field>
     </div>
  
